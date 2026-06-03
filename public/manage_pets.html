@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="manage_pets_style.css">
+</head>
+<body>
+
+<a href="http://localhost:3000/"> <h2> Home </h2></a>
+<div class="form">
+    <h2>Manage Pets</h2>
+    <input id="pet_id" placeholder="Pet ID (required)">
+    <input id="name" placeholder="Name">
+    <input id="species" placeholder="Species">
+    <input id="breed" placeholder="Breed">
+    <input id="color" placeholder="Color">
+    <input id="age" placeholder="Age (months)">
+    <select id="gender" name="gender">
+     <option value="Male">Male</option>
+     <option value="Female">Female</option>
+    </select>
+    <input id="arrival_date" type="date">
+    <input id="price" placeholder="Price">
+    <input id="supplier" placeholder="Supplier ID">
+    <input id="customer_id" placeholder="Customer ID">
+    <input id="health_notes" placeholder="HealthNotes">
+    <select id="status" name="status">
+     <option value="Available">Available</option>
+     <option value="Sold">Sold</option>
+     <option value="Reserved">Reserved</option>
+    </select>   
+    <button onclick="deletePet()" class="full-width_del">Delete</button>
+    <button onclick="savePet()" class="full-width_add">Add/Update</button>
+    
+</div>
+
+<!-- <form class="form">
+    <h2 class="full-width">Manage Pets</h2>
+
+    <input type="text" id="pet_id" placeholder="Pet ID (required)">
+    <input type="text" id="name" placeholder="Name">
+
+    <input type="text" id="species" placeholder="Species">
+    <input type="text" id="breed" placeholder="Breed">
+
+    <input type="text" id="color" placeholder="Color">
+    <input type="text" id="gender" placeholder="Gender">
+
+    <input type="number" id="age" placeholder="Age (months)">
+    <input type="date">
+
+    <input type="number" id="price" placeholder="Price">
+    <input type="text" id="supplier_id" placeholder="Supplier ID">
+
+    <input type="text" id="customer_id" placeholder="Customer ID" class="full-width">
+
+    <input type="text" id="health_notes" placeholder="Health Notes" class="full-width">
+
+    <button class="full-width_add">Add/Update</button>
+    <button class="full-width_del" id="del">Delete</button>
+</form> -->
+
+
+<h2>All Pets</h2>
+<div id="petList" class="scroll-box"></div>
+
+<script src="manage_pets.js"></script>
+</body>
+</html>

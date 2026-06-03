@@ -1,0 +1,137 @@
+/* Import a nice font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* 1. Global Reset & Variables */
+:root {
+    --primary-color: #4a90e2; /* Trustworthy Blue */
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-dark: #333333;     /* Soft Black */
+    --text-light: #777777;
+    --border-color: #e0e0e0;  /* New variable for neutral borders */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* 3. Typography */
+h2 {
+    text-align: center;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h3 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* --- 4. Dashboard Buttons (UPDATED SECTIONS) --- */
+
+button {
+    background-color: var(--card-bg);
+    /* CHANGE: Font colour is now black (using the dark variable) */
+    color: var(--text-dark); 
+    /* CHANGE: Border is now neutral gray initially */
+    border: 2px solid var(--border-color);
+    
+    padding: 15px 20px;
+    margin: 8px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    
+    /* IMPORTANT: Smooth transition for hover effects */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Responsive width calculation for 3-in-a-row */
+    width: calc(33.33% - 20px);
+    display: inline-block;
+}
+
+/* Hover Effects */
+button:hover {
+    /* CHANGE: On hover, background becomes blue */
+    background-color: var(--primary-color);
+    /* CHANGE: Border matches background */
+    border-color: var(--primary-color);
+    /* CHANGE: Text turns white for contrast against blue bg */
+    color: white;
+    
+    /* Lifts the button up slightly */
+    transform: translateY(-4px); 
+    /* Adds a colored glow shadow underneath */
+    box-shadow: 0 10px 20px -10px rgba(74, 144, 226, 0.5);
+}
+
+/* Click effect */
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px -5px rgba(74, 144, 226, 0.5);
+    transition: all 0.1s ease;
+}
+
+/* ----------------------------------------------- */
+
+
+/* 5. Recently Added Pets List */
+#pets {
+    list-style-type: none;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+#pets li {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pets li:last-child {
+    border-bottom: none;
+}
+
+#pets li:hover {
+    background-color: #fafafa;
+}
+
+/* 6. Responsive Design (Mobile) */
+@media (max-width: 600px) {
+    button {
+        width: 100%; /* Full width on phones */
+        margin: 8px 0;
+    }
+    
+    body {
+        margin: 10px;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="suppl_style.css">
+</head>
+<body>
+    <a href="http://localhost:3000/"><h3>Home</h3></a>
+<h2>Manage Suppliers</h2>
+
+<div class="form">
+    <input id="supplier_id" placeholder="Supplier ID (required)">
+    <input id="name1" placeholder="Name">
+    <input id="contact_person" placeholder="Contact Person">
+    <input id="phone" placeholder="Phone">
+    <input id="email" placeholder="Email">
+    <input id="address" placeholder="Address">
+
+    <button onclick="saveSupplier()">Add / Update</button>
+    <button onclick="deleteSupplier()">Remove</button>
+</div>
+
+<h3>All Suppliers</h3>
+
+<div class="scroll-box">
+<table id="supplierTable" border="1" width="100%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+    </tr>
+</table>
+</div>
+
+<script src="suppliers.js"></script>
+</body>
+</html>

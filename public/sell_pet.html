@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="sell_pet_style.css">
+</head>
+<body>
+
+<a href="http://localhost:3000/"> <h3> Home </h3></a><h2>Sell Pets</h2>
+
+<h3>Add/Edit customer</h3>
+<input id="customer_id" placeholder="Customer ID">
+<input id="full_name" placeholder="Full Name">
+<input id="phone" placeholder="Phone">
+<input id="email" placeholder="Email">
+<input id="address" placeholder="Address">
+<input id="created_at" placeholder="created_at" type="date">
+<button onclick="saveCustomer()">Select Customer</button>
+<hr>
+<h3>Order Details</h3>
+<h4>Customer ID: <span id="cust_id"></span></h4>
+<input id="order_id" placeholder="Order ID">
+<select id="payment_method" name="payment_method">
+<option value="Cash">Cash</option>
+<option value="Card">Card</option>
+<option value="UPI">UPI</option>
+</select>
+<input id="order_date" type="date">
+
+<button onclick="saveOrder()">Save Order</button>
+
+<hr>
+
+<h3>Add Pet</h3>
+<input id="pet_id" placeholder="Pet ID">
+<input id="price" placeholder="Price">
+
+<button onclick="addItem()">Add</button>
+<button onclick="removeItem()">Remove</button>
+<button onclick="loadItems()">Refresh</button>
+<button onclick="proceed()">Proceed</button>
+
+<h3>Total Amount: <span id="total">0</span></h3>
+<h3>Order Items</h3>
+<div class="scroll-box">
+<table id="items" border="1" width="100%">
+<tr>
+<th>Pet ID</th><th>Name</th><th>Species</th><th>Breed</th><th>Color</th><th>Age</th><th>Price</th>
+</tr>
+</table>
+<p id="empty"></p>
+</div>
+
+<script src="sell_pet.js"></script>
+</body>
+</html>

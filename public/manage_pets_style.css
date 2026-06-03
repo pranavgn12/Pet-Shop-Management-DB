@@ -1,0 +1,140 @@
+body {
+    font-family: Arial;
+    margin: 20px; 
+    text-align: center;
+}
+
+a{
+    text-align: left;
+    color: none;
+    text-decoration: none;
+}
+
+.form {
+    /* Switch to Grid Layout */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    gap: 10px; /* Adds space between the grid items */
+    
+    /* Layout Adjustments */
+    width: 100%;
+    max-width: 500px; /* Increased width slightly to accommodate columns */
+    margin: 20px auto; /* Centers the form on the page properly */
+    padding: 20px;
+    
+    /* Aesthetics */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    font-family: sans-serif;
+}
+
+/* Make inputs fill their grid cell */
+.form input, 
+.form select, 
+.form textarea {
+    text-align: center;
+    width: 100%;
+    height: 40px; 
+    box-sizing: border-box; /* Ensures padding doesn't break the layout */
+    padding: 8px;
+}
+
+/* UTILITY CLASS: Add this class to items you want to take up the whole row */
+
+.full-width_add {
+    color: white;
+    background-color: #0084ffff;
+
+}
+.full-width_add:hover {
+    background-color: #0056a7ff;
+}
+
+
+
+.full-width_del {
+    color: white;
+    background-color: #b60000ff;
+}
+
+.full-width_del:hover {
+    background-color: #910000ff;
+}
+
+/* Optional: Make the buttons sit side-by-side at the bottom */
+.form button {
+    width: 100%;
+    cursor: pointer;
+}
+
+
+input, select{
+    height: 40px;
+    width:  320px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+button {
+    width:  320px;
+    height: 40px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input {
+    display: block;
+    margin: 5px 0;
+}
+.form input {
+    display: block;
+    margin: 4px 0;
+}
+
+.scroll-box {
+    width: 100%;
+    max-width: 100%; /* Adjust based on your preference */
+    margin: 20px auto;
+    height: 300px; /* This defines the scrollable area height */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: auto; /* Enables horizontal scrolling on small screens */
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Removes space between borders */
+    table-layout: auto;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left; /* Aligns text for better readability */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Sticky Header Styling */
+th {
+    position: sticky;
+    top: 0;
+    background-color: rgb(35, 41, 46); /* Background needed so rows don't show behind it */
+    color: white;
+    z-index: 1; /* Ensures header stays on top of content */
+    font-weight: bold;
+}
+
+/* Hover effect for rows */
+tr:hover {
+    background-color: #f5f5f5;
+}

@@ -1,0 +1,192 @@
+/* --- Global Styles --- */
+:root {
+    --primary-color: #2563eb;       /* Modern Blue */
+    --primary-hover: #1d4ed8;
+    --danger-color: #dc2626;        /* Red for delete */
+    --danger-hover: #b91c1c;
+    --bg-color: #f3f4f6;            /* Light gray background */
+    --card-bg: #ffffff;
+    --text-color: #1f2937;
+    --border-color: #e5e7eb;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Headings & Links --- */
+h2, h3 {
+    color: #111827;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 900px; /* Aligns title with content */
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+}
+
+a:hover h3 {
+    color: var(--primary-color);
+}
+
+a h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+a h3::before {
+    margin-right: 5px;
+}
+
+/* --- Form Styling --- */
+.form {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 850px; /* Limits width on large screens */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two column layout */
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+/* Make Supplier ID span full width or stand out */
+#supplier_id {
+    grid-column: span 2; 
+}
+
+input {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* --- Button Styling --- */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: white;
+}
+
+/* Specific button positioning */
+button[onclick="saveSupplier()"] {
+    background-color: var(--primary-color);
+    grid-column: 1 / 2; /* First column */
+}
+
+button[onclick="saveSupplier()"]:hover {
+    background-color: var(--primary-hover);
+}
+
+button[onclick="deleteSupplier()"] {
+    background-color: var(--danger-color);
+    grid-column: 2 / 3; /* Second column */
+}
+
+button[onclick="deleteSupplier()"]:hover {
+    background-color: var(--danger-hover);
+}
+
+/* --- Table & Scroll Box --- */
+.scroll-box {
+    width: 100%;
+    max-width: 900px;
+    
+    /* 1. Define the height to force scrolling when content exceeds it */
+    max-height: 400px; 
+    
+    /* 2. Use 'auto' for both X and Y to handle vertical list 
+          AND horizontal mobile scrolling */
+    overflow: auto;  
+    
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    
+    /* 3. Smooth scrolling for touch devices */
+    -webkit-overflow-scrolling: touch; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Sticky Header */
+th {
+    background-color: #f8fafc;
+    color: #4b5563;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 15px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border-bottom: 2px solid var(--border-color);
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+/* Zebra Striping for readability */
+tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+tr:hover {
+    background-color: #eef2ff; /* Highlight row on hover */
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+    .form {
+        grid-template-columns: 1fr; /* Stack inputs on mobile */
+    }
+    
+    #supplier_id, 
+    button[onclick="saveSupplier()"], 
+    button[onclick="deleteSupplier()"] {
+        grid-column: span 1;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
+

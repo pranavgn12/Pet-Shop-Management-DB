@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="customers.css">
+</head>
+<body>
+<a href="http://localhost:3000/"><h3>Home</h3></a>
+<h2>Manage Customers</h2>
+
+<div class="form">
+    <input id="customer_id" placeholder="Customer ID (required)">
+    <button onclick="deleteCustomer()">Remove Customer</button>
+</div>
+
+<h3>All Customers</h3>
+
+<div class="scroll-box">
+<table id="customersTable" border="1" width="100%">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Created At</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>
+
+<script src="customers.js"></script>
+</body>
+</html>
